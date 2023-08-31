@@ -1,0 +1,28 @@
+body {
+    background: hsl(224, 32%, 12%);
+    background-image: conic-gradient(
+            from 0deg at 50% 50%,
+            blue,
+            purple,
+            purple,
+            blue
+    );
+    background-blend-mode: multiply;
+    min-block-size: 100dvh;
+    display: grid;
+    place-items: center;
+}
+
+img {
+    position: relative;
+
+    transform-style: preserve-3d;
+    transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+}
+
+
+.container {
+    position: relative;
+    overflow: hidden;
+    backface-visibility: hidden; /* to force GPU performance */
+}

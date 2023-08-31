@@ -1,0 +1,21 @@
+/*.card {*/
+/*    --pointer-x: 50%;*/
+/*    --pointer-y: 50%;*/
+/*    --pointer-from-center: 0;*/
+/*    --pointer-from-top: 0.5;*/
+/*    --pointer-from-left: 0.5;*/
+/*    --card-opacity: 0;*/
+/*    --rotate-x: 0deg;*/
+/*    --rotate-y: 0deg;*/
+/*    --background-x: 50%;*/
+/*    --background-y: 50%;*/
+/*    --card-scale: 1;*/
+/*    --translate-x: 0px;*/
+/*    --translate-y: 0px;*/
+
+/*    !*transition: all 0.2s ease-in-out;*!*/
+/*}*/
+
+.card__rotator{
+    /*transition: all 0.2s linear;*/
+}
