@@ -1,55 +1,17 @@
 let keySequence = '';
 let displayed = false;
 const appDiv = document.getElementById('app');
-const htmlToAdd = `
-    <h2>KDA</h2>
-    <p>Découvrez la magie ultime avec Magic, l'extension enchantée de YTCG : maîtrisez le pouvoir des sorts
-        et des créatures dans un univers fantastique épique!</p>
-
-    <section class="card-grid">
-        <div id="kda1" class="card interactive">
-            <div class="card__translater">
-                <div class="card__rotator">
-                    <div class="card__front">
-                        <img src="https://media.discordapp.net/attachments/1088613372204941322/1148347893225369660/farf_card.png?width=484&height=675">
-                        <div class="card__shine"></div>
-                        <div class="card__glare"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="kd2" class="card interactive">
-            <div class="card__translater">
-                <div class="card__rotator">
-                    <div class="card__front">
-                        <img src="https://media.discordapp.net/attachments/1088613372204941322/1148347893225369660/farf_card.png?width=484&height=675">
-                        <div class="card__shine"></div>
-                        <div class="card__glare"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="kd3" class="card interactive">
-            <div class="card__translater">
-                <div class="card__rotator">
-                    <div class="card__front">
-                        <img src="https://media.discordapp.net/attachments/1088613372204941322/1148347893225369660/farf_card.png?width=484&height=675">
-                        <div class="card__shine"></div>
-                        <div class="card__glare"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-`;
+const h2Content = 'KDA';
+const pContent = 'Découvrez la magie ultime avec Magic, l\'extension enchantée de YTCG : maîtrisez le pouvoir des sorts et des créatures dans un univers fantastique épique!';
+const img1 = 'https://media.discordapp.net/attachments/1138141574044319868/1148375233808576512/farf_kda.png?width=494&height=676';
+const img2 = 'https://media.discordapp.net/attachments/1138141574044319868/1148375234915872859/ahri_kda.png?width=494&height=676';
+const img3 = 'https://media.discordapp.net/attachments/1138141574044319868/1148375234378993815/julian_kda.png?width=494&height=676';
 
 document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.getItem('displayed') ? displayed = true : displayed = false;
 
     if(displayed){
-        displayDiv();
+        hydrateDiv();
     }
 });
 
@@ -59,7 +21,7 @@ document.addEventListener('keydown', function (event) {
     keySequence += key;
 
     if (keySequence.includes('KDA') && !displayed) {
-        displayDiv(true);
+        hydrateDiv(true);
         displayed = true;
         sessionStorage.setItem('displayed', true);
     }
@@ -69,12 +31,15 @@ document.addEventListener("keyup", () => {
     keySequence = '';
 });
 
-function displayDiv(scroll = false) {
-    const newDiv = document.createElement("div");
-    newDiv.classList.add('extension');
-    newDiv.classList.add('kda');
-    newDiv.innerHTML = htmlToAdd;
-    appDiv.appendChild(newDiv);
+function hydrateDiv(scroll = false) {
+    const emptyDiv = document.querySelector(".extension.empty");
+    emptyDiv.querySelector('h2').innerHTML = h2Content;
+    emptyDiv.querySelector('p').innerHTML = pContent;
+    emptyDiv.getElementsByTagName('img')[0].src = img1;
+    emptyDiv.getElementsByTagName('img')[1].src = img2;
+    emptyDiv.getElementsByTagName('img')[2].src = img3;
+
+    emptyDiv.style.setProperty('display', '');
 
     if(scroll){
         newDiv.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
