@@ -42,6 +42,6 @@ function hydrateDiv(scroll = false) {
     emptyDiv.style.setProperty('display', '');
 
     if(scroll){
-        newDiv.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+        emptyDiv.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
     }
 }
