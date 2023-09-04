@@ -1,28 +1,61 @@
-body {
-    background: hsl(224, 32%, 12%);
-    background-image: conic-gradient(
-            from 0deg at 50% 50%,
-            blue,
-            purple,
-            purple,
-            blue
-    );
-    background-blend-mode: multiply;
-    min-block-size: 100dvh;
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #313339;
+    color: white;
+}
+
+nav{
+    height: 8vh;
+    background: #1e1f23;
+    font-family: 'Pirata One', cursive;
+    font-size: 2rem;
+}
+
+nav .nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    margin: auto auto;
+}
+
+#app{
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav img{
+    max-height: 50px;
+}
+
+.intro{
     display: grid;
-    place-items: center;
+    grid-template-columns: 66% 34%;
 }
 
-img {
-    position: relative;
-
-    transform-style: preserve-3d;
-    transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+.intro h2{
+    font-size: 3rem;
+    font-family: 'Pirata One', cursive;
+    margin: 20px 0;
+    color: #c657e8;
 }
 
+.intro .text{
+    margin: auto 0;
+    font-size: 1.4rem;
+    font-family: 'Roboto', sans-serif;
+    padding: 0 2rem;
+}
 
-.container {
-    position: relative;
-    overflow: hidden;
-    backface-visibility: hidden; /* to force GPU performance */
+.intro img{
+    justify-self: center;
+    max-height: 50vh;
 }

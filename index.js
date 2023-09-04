@@ -110,7 +110,7 @@ function resetElement(event, element) {
             }, {
                 x: round(newX),
                 y: round(newY),
-                o: 1 - (progress / 100),
+                o: 1 - (progress / 50),
             });
 
         }

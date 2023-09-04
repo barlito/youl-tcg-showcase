@@ -138,13 +138,13 @@
 }
 
 .card__rotator {
-  /*-webkit-transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));*/
-  /*-webkit-transform-style: preserve-3d;*/
-  /*transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));*/
-  /*transform-style: preserve-3d;*/
+  -webkit-transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
+  -webkit-transform-style: preserve-3d;
+  transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
+  transform-style: preserve-3d;
 
   /*!* performance *!*/
-  /*pointer-events: auto;*/
+  pointer-events: auto;
   /*!* overflow: hidden; <-- this improves perf on mobile, but breaks backface visibility. *!*/
   /*!* isolation: isolate; <-- this improves perf, but breaks backface visibility on Chrome. *!*/
 }
