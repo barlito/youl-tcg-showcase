@@ -15,6 +15,7 @@ h2, h3{
     font-family: 'Pirata One', cursive;
     margin: 20px 0;
     color: #c657e8;
+    text-shadow: 0 0 5px black;
 }
 
 h2{
@@ -159,7 +160,7 @@ nav img{
     }
 
     h3{
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     p{
