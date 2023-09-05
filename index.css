@@ -9,6 +9,7 @@
 body{
     background: #313339;
     color: white;
+    text-shadow: 0 0 5px black;
 }
 
 nav{
@@ -27,9 +28,13 @@ nav .nav-content{
     margin: auto auto;
 }
 
-#app > *{
+#app > *:not(section){
     padding: 0 10vw;
 }
+
+/*#app > *{*/
+/*    padding: 0 10vw;*/
+/*}*/
 
 nav img{
     max-height: 50px;
@@ -38,6 +43,11 @@ nav img{
 .intro{
     display: grid;
     grid-template-columns: 66% 34%;
+    align-items: center;
+    background: rgba(30, 17, 49, 0.51) url("https://media.discordapp.net/attachments/1148548272848384010/1148562618747994183/barlito_people_passing_a_gigantic_dimensional_portal_purple_col_ce146707-24fb-46b9-8028-38271734cec4.png?width=1206&height=676") no-repeat fixed center center;
+    background-size: cover;
+    background-blend-mode: darken;
+    min-height: calc(100vh - 8vh);
 }
 
 .intro h2{
@@ -61,7 +71,7 @@ nav img{
 .card-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 2rem 0;
+    padding-top: 2rem;
     justify-items: center;
     grid-gap: 2.5rem 0;
 }
@@ -72,14 +82,37 @@ nav img{
 }
 
 /* Workaround to select all .extension except the first one */
-.extension ~ .extension{
-    margin-top: 4rem;
+/*.extension ~ .extension{*/
+/*    margin-top: 4rem;*/
+/*}*/
+
+.extension{
+    position: relative;
+}
+
+.extension:before{
+    content: '';
+    position: absolute;
+    height: 5px;
+    /*background: #c456e7;*/
+    width: 100%;
+    top: -5px;
+
+    background: linear-gradient(270deg, #c456e7, #e20070, #c456e7, #e20070);
+    background-size: 600% 600%;
+    animation: BackgroundAnimation 60s ease infinite;
+}
+
+@keyframes BackgroundAnimation{
+    0%{background-position:0 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0 50%}
 }
 
 .extension h2{
     font-size: 2.5rem;
     font-family: 'Pirata One', cursive;
-    margin: 20px 0;
+    margin-bottom: 20px;
     color: #c657e8;
 }
 
@@ -87,6 +120,23 @@ nav img{
     font-size: 1.4rem;
     font-family: 'Roboto', sans-serif;
     padding-bottom: 2rem;
+}
+
+.extension#cyberpunk{
+    background: rgb(100, 32, 95) url("https://media.discordapp.net/attachments/1148548272848384010/1148550546849013831/barlito_cyberpunk_2077_night_city_background_neon_color_2933089b-b5e1-4b47-b970-df6e434682f0.png") no-repeat fixed center center;
+    background-blend-mode: hard-light;
+    background-size: cover;
+}
+
+.extension#kda{
+    background: rgb(95, 91, 126) url("https://i.imgur.com/jwT03lC.jpg") no-repeat fixed center center;
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+
+.extension .container{
+    padding: 50px 10vw;
+    backdrop-filter: blur(2px);
 }
 
 /*.extension.cyberpunk{*/
