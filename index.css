@@ -79,6 +79,10 @@ nav img{
     grid-gap: 5rem 0;
 }
 
+.card{
+    touch-action: none;
+}
+
 .card__rotator img{
     height: auto;
     width: 22vw;
