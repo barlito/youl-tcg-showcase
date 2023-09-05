@@ -11,6 +11,25 @@ body{
     color: white;
 }
 
+h2, h3{
+    font-family: 'Pirata One', cursive;
+    margin: 20px 0;
+    color: #c657e8;
+}
+
+h2{
+    font-size: 3.5rem;
+}
+
+h3{
+    font-size: 2.5rem;
+}
+
+p{
+    font-size: 1.4rem;
+    font-family: 'Roboto', sans-serif;
+}
+
 nav{
     height: 8vh;
     background: #1e1f23;
@@ -37,20 +56,12 @@ nav img{
 
 .intro{
     display: grid;
+    align-items: center;
     grid-template-columns: 66% 34%;
-}
-
-.intro h2{
-    font-size: 3.5rem;
-    font-family: 'Pirata One', cursive;
-    margin: 20px 0;
-    color: #c657e8;
 }
 
 .intro .text{
     margin: auto 0;
-    font-size: 1.4rem;
-    font-family: 'Roboto', sans-serif;
 }
 
 .intro img{
@@ -63,12 +74,12 @@ nav img{
     grid-template-columns: repeat(3, 1fr);
     padding: 2rem 0;
     justify-items: center;
-    grid-gap: 2.5rem 0;
+    grid-gap: 5rem 0;
 }
 
 .card__rotator img{
-    height: 430px;
-    width: auto;
+    height: auto;
+    width: 22vw;
 }
 
 /* Workaround to select all .extension except the first one */
@@ -76,33 +87,82 @@ nav img{
     margin-top: 4rem;
 }
 
-.extension h2{
-    font-size: 2.5rem;
-    font-family: 'Pirata One', cursive;
-    margin: 20px 0;
-    color: #c657e8;
-}
-
 .extension p{
-    font-size: 1.4rem;
-    font-family: 'Roboto', sans-serif;
     padding-bottom: 2rem;
 }
 
-/*.extension.cyberpunk{*/
-/*    background: linear-gradient(-45deg, #e0b0f3, #ec51e3, #3cbfcc, #eaf7fb);*/
-/*    background-size: 300% 300%;*/
-/*    animation: gradient 6s ease infinite;*/
-/*}*/
+@media screen and (max-width: 1400px){
+    h2{
+        font-size: 3rem;
+    }
 
-/*@keyframes gradient {*/
-/*    0% {*/
-/*        background-position: 0% 50%;*/
-/*    }*/
-/*    50% {*/
-/*        background-position: 100% 50%;*/
-/*    }*/
-/*    100% {*/
-/*        background-position: 0% 50%;*/
-/*    }*/
-/*}*/
+    h3{
+        font-size: 2rem;
+    }
+
+    p{
+        font-size: 1.2rem;
+    }
+
+    .intro img{
+        max-height: 40vh;
+    }
+
+    .card-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card__rotator img{
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .intro{
+        grid-template-columns: 1fr;
+    }
+
+    .intro img{
+        display: none;
+    }
+
+    .card-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card__rotator img{
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 750px){
+    h2{
+        font-size: 2.5rem;
+    }
+
+    h3{
+        font-size: 1.5rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    .card__rotator img{
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 450px){
+    h2{
+        font-size: 2rem;
+    }
+
+    h3{
+        font-size: 1rem;
+    }
+
+    p{
+        font-size: 0.8rem;
+    }
+}
