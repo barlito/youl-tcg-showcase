@@ -33,7 +33,7 @@ document.addEventListener("keyup", () => {
 
 function hydrateDiv(scroll = false) {
     const emptyDiv = document.querySelector(".extension.empty");
-    emptyDiv.querySelector('h2').innerHTML = h2Content;
+    emptyDiv.querySelector('h3').innerHTML = h2Content;
     emptyDiv.querySelector('p').innerHTML = pContent;
     emptyDiv.getElementsByTagName('img')[0].src = img1;
     emptyDiv.getElementsByTagName('img')[1].src = img2;
