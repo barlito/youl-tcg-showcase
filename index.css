@@ -60,7 +60,9 @@ nav img{
     display: grid;
     align-items: center;
     grid-template-columns: 66% 34%;
-}
+
+    min-height: 100vh;
+    background: linear-gradient(to top, #160925, rgba(255,255,255,0)), center / cover no-repeat url(https://cdn.discordapp.com/attachments/1138141574044319868/1148709159412449361/ggwilly_many_characters_of_multiverse_background_illustration__03a04bb1-7e08-4411-a9ef-f31c44114b88.png);}
 
 .intro .text{
     margin: auto 0;
