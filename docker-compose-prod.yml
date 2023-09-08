@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+    nginx:
+        # @see https://dockerfile.readthedocs.io/en/latest/content/DockerImages/dockerfiles/php-nginx-dev.html#customization
+        image: webdevops/php-nginx-dev:8.1
+        volumes:
+            - ./:/app
+            - ./.docker/nginx/conf.d/default.conf:/opt/docker/etc/nginx/vhost.conf
+        working_dir: /app
+        deploy:
+            labels:
+                - traefik.enable=true
+
+                - traefik.http.services.ytcg-showcase.loadbalancer.server.port=80
+
+                - traefik.http.routers.ytcg-showcase.rule=Host(`ytcg.barlito.fr`)
+                - traefik.http.routers.ytcg-showcase.entrypoints=http
+
+                - traefik.http.routers.ytcg-showcase-secure.rule=Host(`ytcg.barlito.fr`)
+                - traefik.http.routers.ytcg-showcase-secure.entrypoints=https
+                - traefik.http.routers.ytcg-showcase-secure.tls=true
+        networks:
+            - traefik_traefik_proxy
+
+networks:
+    traefik_traefik_proxy:
+        external: true
