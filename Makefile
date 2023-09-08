@@ -15,6 +15,10 @@ logs:
 deploy:
 	docker stack deploy -c docker-compose.yml $(stack_name)
 
+.PHONY: deploy-prod
+deploy-prod:
+	docker stack deploy -c docker-compose-prod.yml $(stack_name)
+
 .PHONY: undeploy
 undeploy:
 	docker stack rm $(stack_name)
