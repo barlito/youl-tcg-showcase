@@ -20,6 +20,7 @@ services:
                 - traefik.http.routers.ytcg-showcase-secure.rule=Host(`ytcg.barlito.fr`)
                 - traefik.http.routers.ytcg-showcase-secure.entrypoints=https
                 - traefik.http.routers.ytcg-showcase-secure.tls=true
+                - traefik.http.routers.ytcg-showcase-secure.tls.certresolver=letsencrypt
         networks:
             - traefik_traefik_proxy
 
