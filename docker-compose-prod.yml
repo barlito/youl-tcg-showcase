@@ -1,14 +1,13 @@
-version: '3.4'
-
 services:
     nginx:
-        # @see https://dockerfile.readthedocs.io/en/latest/content/DockerImages/dockerfiles/php-nginx-dev.html#customization
-        image: webdevops/php-nginx-dev:8.1
-        volumes:
-            - ./:/app
-            - ./.docker/nginx/conf.d/default.conf:/opt/docker/etc/nginx/vhost.conf
-        working_dir: /app
+        image: barlito/youl-tcg-showcase:${TAG:-latest}
         deploy:
+            replicas: 1
+            update_config:
+                order: start-first
+                parallelism: 1
+                monitor: 15s
+                failure_action: rollback
             labels:
                 - traefik.enable=true
 
